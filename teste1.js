@@ -1,21 +1,23 @@
-var data =  require("./fakeData");
+const data = require("./fakeData");
 
-const getUser = ( req, res, next ) => {
-    
-    var name =  req.query.name;
+// usar axios será um ótimo jeito de otimizar esse código,
+// porém não sei se para esse teste é permitido
+// importar módulos externos/extras
 
-    for(let i = 0; i < data.length;  i++) {
-        if(i.name == name) {
-            res.send(data[i]);
-        }
-    }
+const getUser = (req, res, _next) => {
+    const { name } = req.query;
+    // usar hof para buscar pelo nome no banco fake
+    const foundName = data.find((person) => person.name === name);
+    // se achar, retorna a pessoa com status 200 (ok)
+    if (foundName) return res.status(200).json(foundName);
+    // se não achar, retorna status 404 (not found) com mensagem
+    return res.status(404).json({ message: 'Pessoa não encontrada.' });
 
 };
 
-const getUsers = ( req, res, next ) => {
-    
-    res.send(data);
-    
+const getUsers = (req, res, next) => {
+    // apenas retorna todos os dados
+    res.status(200).json(data);
 };
 
 module.exports = {
