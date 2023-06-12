@@ -1,4 +1,4 @@
-const data = require("./fakeData");
+const data = require("./data/fakeData");
 
 // usar axios será um ótimo jeito de otimizar esse código,
 // porém não sei se para esse teste é permitido

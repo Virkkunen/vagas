@@ -2,7 +2,7 @@ const data = require("./fakeData");
 
 // o erro é que estava escrito jov ao invés de job,
 // mas aproveitei pra arrumar algumas coisas,
-// como não usar var e adicionar id no user
+// como não usar const e adicionar id no user
 
 module.exports = function (req, res) {
     const { name, job } = req.body;
