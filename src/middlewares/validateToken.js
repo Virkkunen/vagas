@@ -4,6 +4,7 @@ const secret = process.env.JWT_SECRET || 'secret_token'; // chave secreta, vem d
 
 const auth = (req, res, next) => {
   // recebe valor do header
+  // header Authorization vem do GET /user?name=...
   const token = req.headers.authorization;
 
   if (!token) return res.status(401).json({ message: 'Token não encontrado.' });

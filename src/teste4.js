@@ -1,6 +1,7 @@
 const data = require("./data/fakeData");
 
 module.exports = function (req, res) {
+    // header Authorization vem do GET /user?name=...
     const { id } = req.params;
     const { name, job } = req.body;
 

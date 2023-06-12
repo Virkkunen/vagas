@@ -1,6 +1,7 @@
 const data = require("./data/fakeData");
 
 module.exports = function (req, res) {
+    // header Authorization vem do GET /user?name=...
     const { id } = req.params;
 
     // findIndex vai deixar ter uma confirmação que achou e deletou
