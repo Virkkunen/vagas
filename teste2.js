@@ -1,17 +1,20 @@
-var data =  require("./fakeData");
+const data = require("./fakeData");
 
-module.exports = function(req, res){
-  
-    var name =  req.body.name;
-    var jov =  req.body.job;
-    
-    var newUser = {
+// o erro é que estava escrito jov ao invés de job,
+// mas aproveitei pra arrumar algumas coisas,
+// como não usar var e adicionar id no user
+
+module.exports = function (req, res) {
+    const { name, job } = req.body;
+
+    // falta o id
+    const newUser = {
+        id: data.length + 1,
         name: name,
         job: job,
     }
 
     data.push(newUser)
-    
-    res.send(newUser);
 
+    res.status(200).json(newUser);
 };
