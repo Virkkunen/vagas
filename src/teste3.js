@@ -4,7 +4,7 @@ module.exports = function (req, res) {
     const { id } = req.params;
 
     // findIndex vai deixar ter uma confirmação que achou e deletou
-    const userIndex = data.findIndex((person) => person.id === id);
+    const userIndex = data.findIndex((person) => person.id === +id);
 
     // se não achar o user, index é -1
     if (userIndex !== -1) {
