@@ -8,6 +8,7 @@ const teste3 = require("./teste3");
 const teste4 = require("./teste4");
 const teste5 = require("./teste5");
 const { validateUpdateUser } = require('./middlewares/validateInfo');
+const { auth } = require('./middlewares/validateToken');
 
 
 app.set('view engine', 'jade');
@@ -32,8 +33,8 @@ app.get('/', function(req, res){
 app.get("/user", teste1.getUser);
 app.get("/users", teste1.getUsers);
 app.post("/users", validateUpdateUser, teste2)
-app.delete("/users/:id", teste3)
-app.put("/users/:id", validateUpdateUser, teste4)
+app.delete("/users/:id", auth, teste3)
+app.put("/users/:id", auth, validateUpdateUser, teste4)
 app.get("/users/access", teste5);
 
 
