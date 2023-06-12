@@ -1,9 +1,5 @@
 const data = require("./data/fakeData");
 
-// usar axios será um ótimo jeito de otimizar esse código,
-// porém não sei se para esse teste é permitido
-// importar módulos externos/extras
-
 const getUser = (req, res, _next) => {
     const { name } = req.query;
     // usar hof para buscar pelo nome no banco fake
