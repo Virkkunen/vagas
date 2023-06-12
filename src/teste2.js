@@ -1,4 +1,4 @@
-const data = require("./fakeData");
+const data = require("./data/fakeData");
 
 // o erro é que estava escrito jov ao invés de job,
 // mas aproveitei pra arrumar algumas coisas,
