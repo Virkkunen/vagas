@@ -1,7 +1,7 @@
 const data = require("./fakeData");
 
 module.exports = function (req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     const { name, job } = req.body;
 
     // o + no id converte de string pra number
