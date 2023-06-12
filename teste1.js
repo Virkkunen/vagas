@@ -11,7 +11,7 @@ const getUser = (req, res, _next) => {
     // se achar, retorna a pessoa com status 200 (ok)
     if (foundName) return res.status(200).json(foundName);
     // se não achar, retorna status 404 (not found) com mensagem
-    return res.status(404).json({ message: 'Pessoa não encontrada.' });
+    return res.status(404).json({ message: 'Usuário não encontrado.' });
 
 };
 

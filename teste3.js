@@ -13,5 +13,5 @@ module.exports = function (req, res) {
         return res.status(204).end();
     }
 
-    return res.status(404).json({ message: 'Pessoa não encontrada.' });
+    return res.status(404).json({ message: 'Usuário não encontrado.' });
 };
